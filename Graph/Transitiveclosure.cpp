@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-#define V 4
+#define V 5
 
 void Print_Transitive(int initial[V][V])
 {
@@ -40,9 +40,19 @@ void Print_Transitive(int initial[V][V])
                 result[i][j] = result[i][j] || (result[i][k] && result[k][j]);
             }
         }
+        cout << "Step : " << k << "\n";
+        for (int h = 0; h < V; h++)
+        {
+            for (int g = 0; g < V; g++)
+            {
+                cout << result[h][g] << "  ";
+            }
+            cout << "\n";
+        }
+        cout << "\n";
     }
     cout << "\n"
-         << "Transitive closure : "
+         << "Final Transitive closure : "
          << "\n";
 
     for (int i = 0; i < V; i++)
@@ -57,9 +67,10 @@ void Print_Transitive(int initial[V][V])
 
 int main()
 {
-    int graph[V][V] = {{1, 1, 0, 1},
-                       {0, 1, 1, 0},
-                       {0, 0, 1, 1},
-                       {0, 0, 0, 1}};
+    int graph[V][V] = {{0, 0, 0, 0, 1},
+                       {1, 0, 0, 0, 0},
+                       {0, 0, 1, 1, 0},
+                       {0, 0, 1, 0, 1},
+                       {1, 0, 1, 0, 1}};
     Print_Transitive(graph);
 }

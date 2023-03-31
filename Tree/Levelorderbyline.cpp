@@ -1,62 +1,76 @@
 #include <iostream>
 #include <queue>
-using namespace std ;
+using namespace std;
 
-
-class Node{
- public:
- int key ;
- Node* left ;
- Node* right ;
- Node(int k){
-     key = k ;
-     right = NULL ;
-     left = NULL ;
- }
+class Node
+{
+public:
+    int key;
+    Node *left;
+    Node *right;
+    Node(int k)
+    {
+        key = k;
+        right = NULL;
+        left = NULL;
+    }
 };
 
-
-void LevelOrderbyline(Node* root){
-    if(root == NULL){
-        return ;
+void LevelOrderbyline(Node *root)
+{
+    if (root == NULL)
+    {
+        return;
     }
-    queue<Node*> q ;
+    int sum = 0;
+    queue<Node *> q;
     q.push(root);
     q.push(NULL);
-    while(q.size() > 1){
-        Node* curr= q.front();
+    while (q.size() > 1)
+    {
+        Node *curr = q.front();
         q.pop();
-        if(curr == NULL){
+        if (curr == NULL)
+        {
             cout << "\n";
             q.push(NULL);
-            continue ;
+            continue;
         }
         cout << curr->key << "  ";
-        if(curr->left != NULL){
+
+        if (curr->left != NULL)
+        {
             q.push(curr->left);
         }
-        if(curr->right != NULL){
+        if (curr->right != NULL)
+        {
             q.push(curr->right);
         }
     }
 }
 
-void printlevel(Node* root){
-    if(root == NULL){
-        return ;
+void printlevel(Node *root)
+{
+    if (root == NULL)
+    {
+        return;
     }
-    queue<Node* > q ;
+    queue<Node *> q;
     q.push(root);
-    while(q.empty() == false){
+    while (q.empty() == false)
+    {
         int count = q.size();
-        for(int i = 0 ; i < count ; i++){
-            Node* curr = q.front();
+        for (int i = 0; i < count; i++)
+        {
+            Node *curr = q.front();
             q.pop();
             cout << curr->key << "  ";
-            if(curr->left != NULL){
+            if (curr->left != NULL)
+            {
                 q.push(curr->left);
             }
-            if(curr->right != NULL){
+            if (curr->right != NULL)
+            {
                 q.push(curr->right);
             }
         }
@@ -64,8 +78,9 @@ void printlevel(Node* root){
     }
 }
 
-int main(){
-     Node* root = new Node(1);
+int main()
+{
+    Node *root = new Node(1);
     root->left = new Node(2);
     root->left->left = new Node(3);
     root->left->right = new Node(4);

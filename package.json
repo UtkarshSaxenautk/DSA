@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.2.6",
+    "shopify-api-node": "^3.10.1",
+    "shopify-buy": "^2.16.1"
+  },
+  "name": "dsa",
+  "version": "1.0.0",
+  "main": "shopify.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UtkarshSaxenautk/DSA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UtkarshSaxenautk/DSA/issues"
+  },
+  "homepage": "https://github.com/UtkarshSaxenautk/DSA#readme",
+  "description": ""
+}

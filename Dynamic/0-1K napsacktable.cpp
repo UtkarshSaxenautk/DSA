@@ -50,8 +50,8 @@ void Knap(int W, int val[], int wei[], int n)
 
 int main()
 {
-    int V[] = {10, 40, 30, 50};
-    int Wei[] = {5, 4, 6, 3};
-    int W = 10;
-    Knap(W, V, Wei, 4);
+    int V[] = {4, 6, 7, 9, 10};
+    int Wei[] = {3, 5, 7, 8, 9};
+    int W = 22;
+    Knap(W, V, Wei, 5);
 }
